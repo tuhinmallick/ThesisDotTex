@@ -42,18 +42,19 @@ def delete_recursive(path, extensions, quiet=False):
     nothing_removed = True
 
     for root, dirs, files in os.walk(path):
-        files = [f for f in files if not f[0] == '.']  # Skip files starting with '.'
-        dirs[:] = [d for d in dirs if not d[0] == '.']  # Skip directories starting with '.'
+        files = [f for f in files if f[0] != '.']
+        dirs[:] = [d for d in dirs if d[0] != '.']
 
         for current_file in files:
             for ex in extensions:
                 if current_file.endswith(ex):
-                    if not quiet: print('Removing {}'.format(os.path.join(os.path.relpath(root), current_file)))
+                    if not quiet:
+                        print(f'Removing {os.path.join(os.path.relpath(root), current_file)}')
                     os.remove(os.path.join(root, current_file))
                     nothing_removed = False
 
-    if nothing_removed:
-        if not quiet: print('No files removed.')
+    if nothing_removed and not quiet:
+        print('No files removed.')
 
 
 def setup_argparse():
