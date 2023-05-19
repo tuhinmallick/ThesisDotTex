@@ -1,0 +1,80 @@
+\DeclareRobustCommand{\mybox}[2][grey]{%
+	\begin{tcolorbox}[   %% Adjust the following parameters at will.
+			breakable,
+			left=5pt,
+			right=5pt,
+			top=5pt,
+			bottom=5pt,
+			colback=#1,
+			colframe=darkgrey,
+			width=\dimexpr\textwidth\relax,
+			enlarge left by=0mm,
+			boxsep=5pt,
+			arc=5pt,outer arc=5pt,
+		]
+		#2
+	\end{tcolorbox}
+}
+
+\usepackage{minitoc}
+
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{colortbl}
+% \definecolor{darkblue}{RGB}{50,107,164} % Bootstrap style
+%\definecolor{darkblue}{RGB}{0,0,0} % Bootstrap style
+\usepackage{pdfpages}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+% \usepackage[helvetica]{quotchap}
+% \usepackage{gensymb}
+\usepackage{xspace}
+
+% Nicer fonts
+\usepackage[sfdefault]{roboto}
+%\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage[bitstream-charter]{mathdesign}
+\renewcommand{\familydefault}{\rmdefault}
+
+% Set font for description env
+\usepackage{enumitem}
+\setlist[description]{%
+	topsep=25pt,               % space before start / after end of list
+	itemsep=5pt,               % space between items
+	font={\normalfont\bfseries}  % set the label font
+}
+
+
+\usepackage{layouts}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage[english]{babel}
+\usepackage{ngerman}
+\usepackage{longtable}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+%\usepackage{array}
+\usepackage{booktabs}
+%\usepackage{paralist}
+%\usepackage{calc}
+%\usepackage{nomencl}
+\usepackage{tabulary}
+%\usepackage{tabularx}
+\usepackage{url}
+\urlstyle{same}
+
+\usepackage{float}
+\usepackage[hang, bf]{caption}
+\usepackage{subcaption}
+\captionsetup{width=0.9\textwidth}
+
+%
+\usepackage{fancyhdr}
+
+% Handling of floats
+\usepackage[section,verbose]{placeins}
+\usepackage[all]{nowidow}
